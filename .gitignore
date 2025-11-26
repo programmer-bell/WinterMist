@@ -44,7 +44,7 @@ db.sqlite3
 # Comment out if you want to track migrations
 */migrations/
 !*/migrations/__init__.py
-
+migrations
 # Media & Static Files
 media/
 staticfiles/
