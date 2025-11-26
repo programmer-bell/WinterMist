@@ -1,20 +1,19 @@
-# api/views.py
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from products.models import Product
+from django.forms.models import model_to_dict
 
 @csrf_exempt
 def api_home(request, *args, **kwargs):
-    body = request.body
+    model_data = Product.objects.all().order_by("?").first()
     data = {}
-    try:
-        data = json.loads(body)
-    except:
-        pass
-    print('The get method:',request.GET) # url query params
-    print('The post method:',request.POST) # url query params
-    print("Raw body:", body)
-    print("Parsed JSON:", data)
-    data['headers'] = dict(request.headers)
-    data['content_type'] = request.content_type
+    if model_data:
+        # Manually process
+        # data['title'] = model_data.title
+        # data['content'] = model_data.content
+        # data['price'] =  model_data.price
+
+        # By using django forms
+        data = model_to_dict(model_data,fields=['id','title','price'])
     return JsonResponse(data)
