@@ -11,4 +11,5 @@ dependencies = [
     "djangorestframework-simplejwt>=5.5.1",
     "psycopg2>=2.9.11",
     "python-decouple>=3.8",
+    "requests>=2.32.5",
 ]
