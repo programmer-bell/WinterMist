@@ -25,7 +25,7 @@ Here you'll find:
 - **Python 3.x**
 - **Django**
 - **Django REST Framework**
-- SQLite/PostgreSQL (depending on future direction)
+- PostgreSQL (depending on future direction)
 
 ---
 
